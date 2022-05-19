@@ -1,5 +1,6 @@
 ﻿using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.Concrete.DTOs;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -37,13 +38,21 @@ namespace DataAccess.Concrete.EntityFramework
 
         public void Add(Car entity)
         {
-            using (RentACarContext context = new RentACarContext())
+            try
             {
+                using (RentACarContext context = new RentACarContext())
+                {
 
-                var addedEntity = context.Entry(entity);
-                addedEntity.State = EntityState.Added;
-                context.SaveChanges();
+                    var addedEntity = context.Entry(entity);
+                    addedEntity.State = EntityState.Added;
+                    context.SaveChanges();
 
+                }
+            }
+            catch(Exception exception)
+            {
+                Console.WriteLine(exception.Message);
+             
             }
         }
         public void Update(Car entity)
@@ -69,10 +78,28 @@ namespace DataAccess.Concrete.EntityFramework
             }
         }
 
-       
+        public List<CarDetailsDTO> GetCarDetails()
+        {
+            using (RentACarContext context=new RentACarContext())
+            {
+                var carDetailsList = from ca in context.Cars
+                                     join b in context.Brands
+                                     on ca.BrandId equals b.Id
+                                     join co in context.Colors
+                                     on ca.ColorId equals co.Id
+                                     select new CarDetailsDTO
+                                     {
+                                         BrandName = b.BrandName,
+                                         ColorName = co.ColorName,
+                                         DailyPrice = ca.DailyPrice,
+                                         Description = ca.Description,
+                                         ModelYear = ca.ModelYear
 
-        
 
-        
+                                     };
+                return carDetailsList.ToList();
+
+            }
+        }
     }
 }
