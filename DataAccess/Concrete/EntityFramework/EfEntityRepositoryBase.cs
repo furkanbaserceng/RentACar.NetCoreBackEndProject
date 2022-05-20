@@ -1,4 +1,5 @@
-﻿using Entities.Abstract;
+﻿using DataAccess.Abstract;
+using Entities.Abstract;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfEntityRepositoryBase<TContext,TEntity> 
+    public class EfEntityRepositoryBase<TContext,TEntity> :IEntityRepository<TEntity>
         where TContext:DbContext,new()
         where TEntity : class, IEntity,new()
     {

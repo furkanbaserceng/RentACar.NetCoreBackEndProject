@@ -105,8 +105,8 @@ foreach (var color in _colorService.GetAll())
 //    ColorName = "Blue"
 //});
 
-_colorService.Delete(new Color
-{
-    Id = 1002
+//_colorService.Delete(new Color
+//{
+//    Id = 1002
     
-});
+//});
