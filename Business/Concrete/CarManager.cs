@@ -26,7 +26,7 @@ namespace Business.Concrete
             return _carDal.GetAll();
         }
 
-        public List<CarDetailsDTO> GetCarDetails()
+        public List<CarDetailDto> GetCarDetails()
         {
             return _carDal.GetCarDetails();
         }

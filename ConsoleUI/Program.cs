@@ -21,7 +21,7 @@ Console.WriteLine("-----------------------------");
 
 foreach (var carDTO in _carService.GetCarDetails())
 {
-    Console.WriteLine(carDTO.Description+"-->"+carDTO.BrandName+"-->"+carDTO.ColorName);
+    Console.WriteLine(carDTO.CarName+"-->"+carDTO.BrandName+"-->"+carDTO.ColorName);
 }
 
 Console.WriteLine("-----------------------------");
@@ -102,11 +102,26 @@ foreach (var color in _colorService.GetAll())
 //_colorService.Update(new Color
 //{   
 //    Id=1002,
-//    ColorName = "Blue"
+//    ColorName = "Blue
 //});
 
 //_colorService.Delete(new Color
 //{
 //    Id = 1002
-    
+
 //});
+
+
+Console.WriteLine("---------------------------------------");
+foreach (var productDTO in _carService.GetCarDetails())
+{
+
+    Console.WriteLine("Car Name:{0}",productDTO.CarName);
+    Console.WriteLine("Brand Name:{0}",productDTO.BrandName);
+    Console.WriteLine("Color Name:{0}",productDTO.ColorName);
+    Console.WriteLine("Daily Price:{0}",productDTO.DailyPrice);
+    Console.WriteLine("Model Year:{0}",productDTO.ModelYear);
+    Console.WriteLine("****");
+
+}
+

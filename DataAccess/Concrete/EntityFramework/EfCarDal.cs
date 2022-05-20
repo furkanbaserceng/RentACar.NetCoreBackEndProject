@@ -16,7 +16,7 @@ namespace DataAccess.Concrete.EntityFramework
     {
         
 
-        public List<CarDetailsDTO> GetCarDetails()
+        public List<CarDetailDto> GetCarDetails()
         {
             using (RentACarContext context=new RentACarContext())
             {
@@ -25,12 +25,12 @@ namespace DataAccess.Concrete.EntityFramework
                                      on ca.BrandId equals b.Id
                                      join co in context.Colors
                                      on ca.ColorId equals co.Id
-                                     select new CarDetailsDTO
+                                     select new CarDetailDto
                                      {
                                          BrandName = b.BrandName,
                                          ColorName = co.ColorName,
                                          DailyPrice = ca.DailyPrice,
-                                         Description = ca.Description,
+                                         CarName = ca.Description,
                                          ModelYear = ca.ModelYear
 
 

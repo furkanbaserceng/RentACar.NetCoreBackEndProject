@@ -8,8 +8,10 @@ using System.Threading.Tasks;
 
 namespace Entities.Concrete.DTOs
 {
-    public class CarDetailsDTO : IDto
+    public class CarDetailDto : IDto
     {
+
+        public string CarName { get; set; }
 
         public string BrandName { get; set; }
 
@@ -19,6 +21,6 @@ namespace Entities.Concrete.DTOs
 
         public int ModelYear { get; set; }
 
-        public string Description { get; set; }
+        
     }
 }
