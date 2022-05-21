@@ -9,6 +9,10 @@ using Entities.Concrete;
 using System.Collections.Generic;
 
 ICarService _carService = new CarManager(new EfCarDal());
+IBrandService _brandService = new BrandManager(new EfBrandDal());
+IColorService _colorService = new ColorManager(new EfColorDal());
+IUserService _userService=new UserManager(new EfUserDal());
+
 
 
 //foreach (var car in _carService.GetAll())
@@ -73,7 +77,7 @@ Console.WriteLine("-----------------------------");
 
 
 
-IBrandService _brandService = new BrandManager(new EfBrandDal());
+
 
 //foreach (var brand in _brandService.GetAll())
 //{
@@ -83,11 +87,11 @@ IBrandService _brandService = new BrandManager(new EfBrandDal());
 ////_brandService.Delete(new Brand
 ////{
 ////    Id=1003
-    
+
 ////});
 
 
-IColorService _colorService = new ColorManager(new EfColorDal());
+
 
 //foreach (var color in _colorService.GetAll())
 //{
@@ -127,18 +131,33 @@ IColorService _colorService = new ColorManager(new EfColorDal());
 
 
 
-var result = _carService.GetAll();
+//var result = _carService.GetAll();
 
-if (result.Success)
-{
+//if (result.Success)
+//{
 
-    foreach (var car in result.Data)
-    {
-        Console.WriteLine(car.Description);
-    }
+//    foreach (var car in result.Data)
+//    {
+//        Console.WriteLine(car.Description);
+//    }
 
-}
-else
-{
-    Console.WriteLine(result.Message);
-}
+//}
+//else
+//{
+//    Console.WriteLine(result.Message);
+//}
+
+
+//var result = _userService.GetAll();
+
+//if (result.Success)
+//{
+
+//    foreach (var user in result.Data)
+//    {
+
+//        Console.WriteLine(user.FirstName+" "+user.LastName+" "+ user.Email);
+
+//    }
+
+//}
