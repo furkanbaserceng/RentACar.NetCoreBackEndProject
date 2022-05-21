@@ -11,35 +11,35 @@ using System.Collections.Generic;
 ICarService _carService = new CarManager(new EfCarDal());
 
 
-foreach (var car in _carService.GetAll())
-{
-    Console.WriteLine("{0}",car.Description);
+//foreach (var car in _carService.GetAll())
+//{
+//    Console.WriteLine("{0}",car.Description);
 
-}
+//}
 
-Console.WriteLine("-----------------------------");
+//Console.WriteLine("-----------------------------");
 
-foreach (var carDTO in _carService.GetCarDetails())
-{
-    Console.WriteLine(carDTO.CarName+"-->"+carDTO.BrandName+"-->"+carDTO.ColorName);
-}
+//foreach (var carDTO in _carService.GetCarDetails())
+//{
+//    Console.WriteLine(carDTO.CarName+"-->"+carDTO.BrandName+"-->"+carDTO.ColorName);
+//}
 
-Console.WriteLine("-----------------------------");
+//Console.WriteLine("-----------------------------");
 
-foreach(var car in _carService.GetCarsByBrandId(1))
-{
-    Console.WriteLine(car.Description);
-}
+//foreach(var car in _carService.GetCarsByBrandId(1))
+//{
+//    Console.WriteLine(car.Description);
+//}
 
-Console.WriteLine("-----------------------------");
+//Console.WriteLine("-----------------------------");
 
 
-foreach (var car in _carService.GetCarsByColorId(1))
-{
-    Console.WriteLine(car.Description);
-}
+//foreach (var car in _carService.GetCarsByColorId(1))
+//{
+//    Console.WriteLine(car.Description);
+//}
 
-Console.WriteLine("-----------------------------");
+//Console.WriteLine("-----------------------------");
 
 //_carService.Add(new Car
 //{
@@ -75,24 +75,24 @@ Console.WriteLine("-----------------------------");
 
 IBrandService _brandService = new BrandManager(new EfBrandDal());
 
-foreach (var brand in _brandService.GetAll())
-{
-    Console.WriteLine("Brands:"+brand.BrandName);
-}
-
-//_brandService.Delete(new Brand
+//foreach (var brand in _brandService.GetAll())
 //{
-//    Id=1003
+//    Console.WriteLine("Brands:"+brand.BrandName);
+//}
+
+////_brandService.Delete(new Brand
+////{
+////    Id=1003
     
-//});
+////});
 
 
 IColorService _colorService = new ColorManager(new EfColorDal());
 
-foreach (var color in _colorService.GetAll())
-{
-    Console.WriteLine("Colors:" + color.ColorName);
-}
+//foreach (var color in _colorService.GetAll())
+//{
+//    Console.WriteLine("Colors:" + color.ColorName);
+//}
 
 //_colorService.Add(new Color
 //{
@@ -112,16 +112,16 @@ foreach (var color in _colorService.GetAll())
 //});
 
 
-Console.WriteLine("---------------------------------------");
-foreach (var productDTO in _carService.GetCarDetails())
-{
+//Console.WriteLine("---------------------------------------");
+//foreach (var productDTO in _carService.GetCarDetails())
+//{
 
-    Console.WriteLine("Car Name:{0}",productDTO.CarName);
-    Console.WriteLine("Brand Name:{0}",productDTO.BrandName);
-    Console.WriteLine("Color Name:{0}",productDTO.ColorName);
-    Console.WriteLine("Daily Price:{0}",productDTO.DailyPrice);
-    Console.WriteLine("Model Year:{0}",productDTO.ModelYear);
-    Console.WriteLine("****");
+//    Console.WriteLine("Car Name:{0}",productDTO.CarName);
+//    Console.WriteLine("Brand Name:{0}",productDTO.BrandName);
+//    Console.WriteLine("Color Name:{0}",productDTO.ColorName);
+//    Console.WriteLine("Daily Price:{0}",productDTO.DailyPrice);
+//    Console.WriteLine("Model Year:{0}",productDTO.ModelYear);
+//    Console.WriteLine("****");
 
-}
+//}
 
