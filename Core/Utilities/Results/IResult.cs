@@ -11,7 +11,7 @@ namespace Core.Utilities.Results
 
         bool Success { get; }
 
-        bool Message { get; }
+        string Message { get; }
 
     }
 
