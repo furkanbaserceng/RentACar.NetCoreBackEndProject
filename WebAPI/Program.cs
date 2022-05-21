@@ -14,6 +14,12 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<ICarService, CarManager>();
 builder.Services.AddSingleton<ICarDal, EfCarDal>();
 
+builder.Services.AddSingleton<ICustomerService,CustomerManager>();
+builder.Services.AddSingleton<ICustomerDal, EfCustomerDal>();
+
+builder.Services.AddSingleton<IRentalService, RentalManager>();
+builder.Services.AddSingleton<IRentalDal, EfRentalDal>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
