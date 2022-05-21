@@ -125,3 +125,20 @@ IColorService _colorService = new ColorManager(new EfColorDal());
 
 //}
 
+
+
+var result = _carService.GetAll();
+
+if (result.Success)
+{
+
+    foreach (var car in result.Data)
+    {
+        Console.WriteLine(car.Description);
+    }
+
+}
+else
+{
+    Console.WriteLine(result.Message);
+}
