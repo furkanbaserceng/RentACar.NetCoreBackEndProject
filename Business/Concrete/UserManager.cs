@@ -20,6 +20,8 @@ namespace Business.Concrete
             _userDal = userDal;
         }
 
+
+
         public IDataResult<List<User>> GetAll()
         {
             return new SuccessDataResult<List<User>>(_userDal.GetAll());
@@ -42,8 +44,8 @@ namespace Business.Concrete
             return new SuccessResult();
         }
 
-        
 
-        
+
+
     }
 }

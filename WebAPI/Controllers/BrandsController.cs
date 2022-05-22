@@ -7,31 +7,34 @@ namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CustomersController : ControllerBase
+    public class BrandsController : ControllerBase
     {
 
-        private ICustomerService _customerService;
+        private IBrandService _brandService;
 
-        public CustomersController(ICustomerService customerService)
+        public BrandsController(IBrandService brandService)
         {
-            _customerService = customerService;
+            _brandService = brandService;
         }
 
-        [HttpGet("getdetails")]
-        public IActionResult GetCustomerDetails()
+
+        [HttpGet("getall")]
+        public IActionResult GetAll()
         {
-            var result = _customerService.GetCustomerDetails();
+            var result = _brandService.GetAll();
             if (result.Success)
             {
                 return Ok(result);
+
             }
             return BadRequest(result);
+
         }
 
         [HttpPost("add")]
-        public IActionResult Add(Customer customer)
+        public IActionResult Add(Brand brand)
         {
-            var result = _customerService.Add(customer);
+            var result = _brandService.Add(brand);
             if (result.Success)
             {
                 return Ok(result);
@@ -42,9 +45,9 @@ namespace WebAPI.Controllers
         }
 
         [HttpPut("update")]
-        public IActionResult Update(Customer customer)
+        public IActionResult Update(Brand brand)
         {
-            var result = _customerService.Update(customer);
+            var result = _brandService.Update(brand);
             if (result.Success)
             {
                 return Ok(result);
@@ -54,9 +57,9 @@ namespace WebAPI.Controllers
 
         }
         [HttpDelete("delete")]
-        public IActionResult Delete(Customer customer)
+        public IActionResult Delete(Brand brand)
         {
-            var result = _customerService.Delete(customer);
+            var result = _brandService.Delete(brand);
             if (result.Success)
             {
                 return Ok(result);
@@ -65,7 +68,5 @@ namespace WebAPI.Controllers
             return BadRequest(result);
 
         }
-
-
     }
 }

@@ -20,6 +20,18 @@ builder.Services.AddSingleton<ICustomerDal, EfCustomerDal>();
 builder.Services.AddSingleton<IRentalService, RentalManager>();
 builder.Services.AddSingleton<IRentalDal, EfRentalDal>();
 
+builder.Services.AddSingleton<IUserService, UserManager>();
+builder.Services.AddSingleton<IUserDal, EfUserDal>();
+
+builder.Services.AddSingleton<IBrandService, BrandManager>();
+builder.Services.AddSingleton<IBrandDal, EfBrandDal>();
+
+builder.Services.AddSingleton<IColorService,ColorManager >();
+builder.Services.AddSingleton<IColorDal, EfColorDal>();
+
+
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
